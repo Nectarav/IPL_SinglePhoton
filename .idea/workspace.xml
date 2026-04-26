@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="648e66da-96b1-4d5e-a393-b62afb8a8721" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Double_Slit_Data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Statistical_Analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6.36_Data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6.75_Data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Statistical_Analysis_Sing_6.36.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Statistical_Analysis_Single_6.75.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IPL_SinglePhoton.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IPL_SinglePhoton.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Double_Slit_Data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Double_Slit_Data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Statistical_Analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Statistical_Analysis_Double.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="3CitUGl8gJrpBAyDN6ybKCGsZUB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,17 +40,21 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.Statistical_Analysis.executor": "Run",
+    "Python.Statistical_Analysis_Double.executor": "Run",
+    "Python.Statistical_Analysis_Sing_6.36.executor": "Run",
+    "Python.Statistical_Analysis_Single_6.75.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Owner/Documents/GitHub/IPL_SinglePhoton"
+    "last_opened_file_path": "C:/Users/mchan/OneDrive/Documents/GitHub/IPL_SinglePhoton"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-ca5e2b39c7df-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.308" />
+        <option value="bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139" />
       </set>
     </attachedChunks>
   </component>
