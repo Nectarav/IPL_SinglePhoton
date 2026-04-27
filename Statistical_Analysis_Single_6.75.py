@@ -27,7 +27,7 @@ yData = np.genfromtxt('6.75_Data.csv', usecols=YCOLUMN, skip_header=NUMBEROFHEAD
 # you have.
 
 def f(theta, A):
-    return (118.7 * np.cos(1.66 * np.sin(theta + A))**2 * np.sin(0.0399 * np.sin(theta + A))**2) / (0.00159 * np.sin(theta + A)**2)
+    return
 
 # x is our dependent variable here, everything else is a parameter that scipy will decide for us.
 # So, let's make scipy do that:
@@ -60,13 +60,13 @@ print("\n\nr^2 is: ", r_squared, "\n\n")
 START = 4.94
 END = 5.94
 STEP = 0.1
-theta = np.arange(START, END, STEP)
+theta = np.arctan(np.arange(START, END, STEP) / 500)
 
 # And we generate the y values of the fit by inserting the values we get from popt back into our chosen function.
 # remember that python indexes from zero, unlike matlab, so the first constant you used in your definition of the
 # function is going to be popt[0], the second will be popt[1], etc.
 
-y = (118.7 * np.cos(1.66 * np.sin(theta + popt[0]))**2 * np.sin(0.0399 * np.sin(theta + popt[0]))**2) / (0.00159 * np.sin(theta + popt[0])**2)
+y = (popt[0] * np.cos(1655 * np.sin(theta))**2 * np.sin(39.86 * np.sin(theta))**2) / (39.86 * np.sin(theta)**2)
 
 
 # At this point, we're done. We have the x and y values of the fit. All that's left is to plot everything. Let's do it.
@@ -85,7 +85,7 @@ plt.rc('legend', fontsize=MEDIUM_SIZE)    # legend fontsize
 plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 plt.rc('axes', titlesize=BIGGER_SIZE)
 
-# A note here: There are a ton of types of plots you can use with matplotlib. For example, I often plot exponentials and
+# A note here: There are a ton of types of plots you can use with matplotlib. For example, I often plot exponentials, and
 # thus I plot on semilog or log plots pretty frequently. plt.semilog() lets you do a semilog plot, and other commands
 # will let you do a ton of other plot types!
 

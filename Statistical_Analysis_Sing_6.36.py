@@ -27,8 +27,9 @@ yData = np.genfromtxt('6.36_Data.csv', usecols=YCOLUMN, skip_header=NUMBEROFHEAD
 # you have.
 
 def f(theta, A):
-    return (162.07 * np.cos(1.66 * np.sin(theta + A))**2 * np.sin(0.0399 * np.sin(theta + A))**2) / (0.00159 * np.sin(theta + A)**2)
-
+    return (162.07 *
+            ((np.sin(((0.085*np.pi)/0.00067)*np.sin(theta + A)))/
+            ((0.085 * np.pi) / 0.00067)*np.sin(theta + A)))
 # x is our dependent variable here, everything else is a parameter that scipy will decide for us.
 # So, let's make scipy do that:
 
@@ -66,8 +67,10 @@ theta = np.arange(START, END, STEP)
 # remember that python indexes from zero, unlike matlab, so the first constant you used in your definition of the
 # function is going to be popt[0], the second will be popt[1], etc.
 
-y = (162.07 * np.cos(1.66 * np.sin(theta + popt[0]))**2 * np.sin(0.0399 * np.sin(theta + popt[0]))**2) / (0.00159 * np.sin(theta + popt[0])**2)
-
+y = (162.07 *
+            (np.sin(((0.085*np.pi)/0.00067)**2)/
+            ((0.085 * np.pi) / 0.00067)*np.sin(theta + popt[0]))
+     )
 
 # At this point, we're done. We have the x and y values of the fit. All that's left is to plot everything. Let's do it.
 # The next few variables determine font sizes for things. Feel free to add more font size variables or change around how
