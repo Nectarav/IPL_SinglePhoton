@@ -6,7 +6,6 @@ from matplotlib import pyplot as plt
 XCOLUMN = 0
 YCOLUMN = 1
 YCOLUMNERROR = 2
-# XCOLUMNERROR = 3
 NUMBEROFHEADERS = 1
 
 # Constants
@@ -75,21 +74,29 @@ def y_right_theory(x):
 # Create double slit plot
 fig, (ax1, ax2) = plt.subplots(1, 2, layout = 'constrained')
 ax1.plot(xDoubleData, y_double_theory(xDoubleData), zorder = 1, label = 'Theoretical Data', color = 'orange')
-ax1.scatter(xDoubleData, yDoubleData, zorder = 2, label = 'Experimental Data', color = 'blue')
-ax1.errorbar(xDoubleData, yDoubleData, yerr = yDoubleDataErr, color = 'blue', fmt = 'none')
-ax1.set_title('Voltage as a function of Micrometer Position')
+ax1.scatter(xDoubleData, yDoubleData, zorder = 3, label = 'Experimental Data', color = 'blue', s=5)
+ax1.errorbar(xDoubleData, yDoubleData, xerr = 0.01, yerr = yDoubleDataErr, zorder = 2, color = 'red', fmt = 'none')
+ax1.set_title('Voltage as a function of Micrometer Position: Double Slit')
 ax1.set_xlabel('Micrometer position (mm)')
 ax1.set_ylabel('Voltage (mV)')
 ax1.legend()
 
 # Create single slit plots
 ax2.plot()
-ax2.scatter(xRightData, yRightData, zorder = 1, label = '6.75 slit experimental data', color = 'blue')
-ax2.plot(xRightData, y_left_theory(xRightData), zorder = 3, label = '6.75 slit theoretical data', color = 'red')
-ax2.scatter(xLeftData, yLeftData, zorder = 2, label = '6.36 slit experimental data', color = 'orange')
-ax2.plot(xRightData, y_left_theory(xLeftData), zorder = 4, label = '6.36 slit theoretical data', color = 'teal')
-ax2.set_title('Voltage as a function of Micrometer Position')
+ax2.scatter(xRightData, yRightData, zorder = 3, label = '6.75 slit experimental data', color = 'blue', s=5)
+ax2.plot(xRightData, y_left_theory(xRightData), zorder = 1, label = '6.75 slit theoretical data', color = 'orange')
+ax2.errorbar(xRightData, yRightData, xerr = 0.01, yerr = 0.23, zorder = 2, fmt = 'none', color = 'red')
+
+ax2.scatter(xLeftData, yLeftData, zorder = 6, label = '4.82 slit experimental data', color = 'teal', s=5)
+ax2.plot(xLeftData, y_left_theory(xLeftData), zorder = 4, label = '4.82 slit theoretical data', color = 'orange')
+ax2.errorbar(xLeftData, yLeftData, xerr = 0.01, yerr = 0.31, zorder = 5, fmt = 'none', color = 'red')
+
+ax2.set_title('Voltage as a function of Micrometer Position: Single Slit')
 ax2.set_xlabel('Micrometer position (mm)')
 ax2.set_ylabel('Voltage (mV)')
 ax2.legend()
 plt.show()
+
+def percent_err(measured, actual):
+    return (np.abs(measured - actual) / np.abs(measured)) * 100
+print(percent_err(yDoubleData, y_double_theory(xDoubleData)))
