@@ -23,8 +23,8 @@ xRightData = np.genfromtxt('6.75_Data.csv', usecols=XCOLUMN, skip_header=NUMBERO
 yRightData = np.genfromtxt('6.75_Data.csv', usecols=YCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
 
 # Experimental left slit
-xLeftData = np.genfromtxt('6.36_Data.csv', usecols=XCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
-yLeftData = np.genfromtxt('6.36_Data.csv', usecols=YCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
+xLeftData = np.genfromtxt('4.82_Data.csv', usecols=XCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
+yLeftData = np.genfromtxt('4.82_Data.csv', usecols=YCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
 
 # Theoretical double slit
 def y_double_theory(x):
@@ -96,7 +96,3 @@ ax2.set_xlabel('Micrometer position (mm)')
 ax2.set_ylabel('Voltage (mV)')
 ax2.legend()
 plt.show()
-
-def percent_err(measured, actual):
-    return (np.abs(measured - actual) / np.abs(measured)) * 100
-print(percent_err(yDoubleData, y_double_theory(xDoubleData)))
