@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 XCOLUMN = 0
 YCOLUMN = 1
-# YCOLUMNERROR = 2
+YCOLUMNERROR = 2
 # XCOLUMNERROR = 3
 NUMBEROFHEADERS = 1
 
@@ -17,6 +17,7 @@ w = 0.000670
 # Experimental double slit
 xDoubleData = np.genfromtxt('Double_Slit_Data.csv', usecols=XCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
 yDoubleData = np.genfromtxt('Double_Slit_Data.csv', usecols=YCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
+yDoubleDataErr = np.genfromtxt('Double_Slit_Data.csv', usecols=YCOLUMNERROR, skip_header=NUMBEROFHEADERS, delimiter=',')
 
 # Experimental right slit
 xRightData = np.genfromtxt('6.75_Data.csv', usecols=XCOLUMN, skip_header=NUMBEROFHEADERS, delimiter=',')
@@ -75,6 +76,7 @@ def y_right_theory(x):
 fig, (ax1, ax2) = plt.subplots(1, 2, layout = 'constrained')
 ax1.plot(xDoubleData, y_double_theory(xDoubleData), zorder = 1, label = 'Theoretical Data', color = 'orange')
 ax1.scatter(xDoubleData, yDoubleData, zorder = 2, label = 'Experimental Data', color = 'blue')
+ax1.errorbar(xDoubleData, yDoubleData, yerr = yDoubleDataErr, color = 'blue', fmt = 'none')
 ax1.set_title('Voltage as a function of Micrometer Position')
 ax1.set_xlabel('Micrometer position (mm)')
 ax1.set_ylabel('Voltage (mV)')
